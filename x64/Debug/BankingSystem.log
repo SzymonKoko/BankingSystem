@@ -1,0 +1,10 @@
+﻿  Account.cpp
+  account_manager.cpp
+  app.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\format(43): warning STL4038: The contents of <format> are available only with C++20 or later.
+  file_serialization.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\format(43): warning STL4038: The contents of <format> are available only with C++20 or later.
+  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\format(43): warning STL4038: The contents of <format> are available only with C++20 or later.
+  Generowanie kodu...
+  BankingSystem.vcxproj -> C:\Users\Acer\source\repos\BankingSystem\x64\Debug\BankingSystem.exe
