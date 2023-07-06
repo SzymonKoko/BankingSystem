@@ -13,14 +13,13 @@
 #include <string>
 #include <stdint.h>
 #include <vector>
+#include <ctime>
+#include <vector>
 
 
 
 class AccountManager 
 {
-
-	
-
 public:
 
 	AccountManager()

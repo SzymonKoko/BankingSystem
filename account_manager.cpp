@@ -7,8 +7,19 @@
 
 #include "account_manager.h"
 
-#include <ctime>
-#include <vector>
+
+static bool checkInput(std::string input, uint16_t minInput, uint16_t maxInput)
+{
+	if (input.length() > maxInput || input.length() < minInput)
+	{
+		std::cout << "This is too short or too long (3-16 characters)\n";
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
 
 void AccountManager::RegisterAccount()
 {
@@ -18,18 +29,29 @@ void AccountManager::RegisterAccount()
 
 	std::string firstName{"defaulf"};
 	std::string lastName{"default"};
+	const uint16_t maxChars = 16u;
+	const uint16_t minChars = 3u;
+	std::string login{"default"};
+	std::string password{ "default" };
 
 	std::cout << "Your full name please: ";
 	std::cin >> firstName >> lastName;
-	/*std::cout << "Date of birth (DD MM YYYY): ";
-	std::cin >> birthDay >> birthMonth >> birthYear;
-	if (lyear-birthYear < 18)
-	{
-		std::cout << "You are to young!\n";
-	}*/
 
-	Account tmpAccount{ firstName, lastName };
+	do {
+		std::cout << "Set your login (3-16 characters): ";
+		std::cin >> login;	
+	} while (checkInput(login, minChars, maxChars) == false);
+
+	do {
+		std::cout << "Set your password (3-16 characters): ";
+		std::cin >> password;
+	} while (checkInput(password, minChars, maxChars) == false);
+
+
+	std::cout << std::endl << login;
+	Account tmpAccount{ firstName, lastName, login, password };
 	accounts.push_back(tmpAccount);
+
 	
 
 }
