@@ -36,7 +36,7 @@ void AccountManager::RegisterAccount()
 
 void AccountManager::PrintAccounts()
 {
-	for (Account const& account : accounts)
+	for (Account account : accounts)
 	{
 		account.SayHello();
 	}

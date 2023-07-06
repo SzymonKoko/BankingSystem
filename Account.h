@@ -21,7 +21,7 @@ public:
 	}
 	
 
-	void SayHello() const;
+	void SayHello();
 private:
 	std::string m_firstName;
 	std::string m_lastName;

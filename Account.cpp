@@ -8,7 +8,7 @@
 #include "Account.h"
 #include <vector>
 
-void Account::SayHello() const
+void Account::SayHello() 
 {
 	std::cout << "My name is " << m_firstName << " " << m_lastName << std::endl;
 }
