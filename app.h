@@ -7,10 +7,10 @@
 
 #ifndef APP_H
 #define APP_H
-
+#include "Account.h"
 #include "account_manager.h"
 #include "file_serialization.h"
-#include "Account.h"
+
 
 void LaunchApp();
 

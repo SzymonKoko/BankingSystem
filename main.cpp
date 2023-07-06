@@ -6,10 +6,12 @@
  */
 
 #include "app.h"
+#include "account_manager.h"
 
 
 int main()
-{
+{	
+
 	LaunchApp();
 	
 	

@@ -6,5 +6,9 @@
  */
 
 #include "Account.h"
-#include "account_manager.h"
 #include <vector>
+
+void Account::SayHello() const
+{
+	std::cout << "My name is " << m_firstName << " " << m_lastName << std::endl;
+}

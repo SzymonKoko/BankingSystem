@@ -10,4 +10,7 @@
 
 void LaunchApp()
 {
+	AccountManager manager;
+	manager.RegisterAccount();
+	manager.PrintAccounts();
 }
