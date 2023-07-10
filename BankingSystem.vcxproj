@@ -130,14 +130,14 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="account_manager.cpp" />
     <ClCompile Include="app.cpp" />
-    <ClCompile Include="file_serialization.cpp" />
+    <ClCompile Include="gui.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
     <ClInclude Include="account_manager.h" />
     <ClInclude Include="app.h" />
-    <ClInclude Include="file_serialization.h" />
+    <ClInclude Include="gui.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

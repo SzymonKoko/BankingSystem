@@ -9,7 +9,7 @@
 #define APP_H
 #include "Account.h"
 #include "account_manager.h"
-#include "file_serialization.h"
+#include "gui.h"
 
 
 void LaunchApp();

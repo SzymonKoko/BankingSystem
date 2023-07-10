@@ -15,6 +15,9 @@
 #include <vector>
 #include <ctime>
 #include <vector>
+#include <fstream>
+#include <format>
+#include <fmt/format.h>
 
 
 
@@ -43,8 +46,11 @@ public:
 
 	//Methods
 
+	void WriteToFile(std::string, std::string, std::string, std::string);
 	void RegisterAccount();
 	void PrintAccounts();
+	void LoginToAccount();
+	
 
 private:
 

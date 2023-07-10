@@ -48,11 +48,11 @@ void AccountManager::RegisterAccount()
 	} while (checkInput(password, minChars, maxChars) == false);
 
 
-	std::cout << std::endl << login;
 	Account tmpAccount{ firstName, lastName, login, password };
 	accounts.push_back(tmpAccount);
 
-	
+
+	WriteToFile(firstName, lastName, login, password);
 
 }
 
@@ -62,5 +62,22 @@ void AccountManager::PrintAccounts()
 	{
 		account.SayHello();
 	}
+}
+
+void AccountManager::LoginToAccount()
+{
+	for (Account account : accounts)
+	{
+		account.LoginToTheAccount();
+	}
+}
+
+void AccountManager::WriteToFile(std::string fName = "Szymon", std::string lName = "Koko", std::string login = "admin", std::string pass = "admin")
+{
+
+	std::string fileName = fmt::format("{} {}.txt", fName, lName);
+	std::ofstream file (fileName);
+	file << fName << '\n' << lName << '\n' << login << '\n' << pass << '\n';
+	file.close();
 }
 
