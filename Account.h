@@ -14,7 +14,7 @@
 #include <fmt/format.h>
 
 
-class Account
+class Account 
 {
 public:
 
@@ -27,7 +27,11 @@ public:
 	
 	}
 	void SayHello();
-	void LoginToTheAccount();
+	std::string ReturnFirstName();
+	std::string ReturnLastName();
+
+
+
 private:
 	std::string m_firstName;
 	std::string m_lastName;
