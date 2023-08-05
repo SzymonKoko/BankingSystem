@@ -13,28 +13,32 @@
 
 void LaunchApp()
 {
+	bool repeat = false;
 	AccountManager manager;
 
-	showGui();
+		Sleep(1000);
+		
+		showStartGui();
 
-	int guiChoice = 0;
-	cout << "Choose the option: ";
-	cin >> guiChoice;
-	switch (guiChoice)
-	{
-	case 1:
-		Sleep(500);
-		system("cls");
-		manager.RegisterAccount();
-		break;
-	case 2:
-		Sleep(500);
-		system("cls");
-		manager.PrintAccounts();
-		break;
-	default:
-		break;
-	}
+		int guiChoice = 0;
+		cout << "Choose the option: ";
+		cin >> guiChoice;
+		switch (guiChoice)
+		{
+		case 1:
+			Sleep(500);
+			system("cls");
+			manager.RegisterAccount();
+		case 2:
+			Sleep(500);
+			system("cls");
+			manager.GetLogin();
+			showAppGui();
+			break;
+		default:
+			repeat = true;
+			break;
+		}
 	
 	
 	//manager.RegisterAccount();

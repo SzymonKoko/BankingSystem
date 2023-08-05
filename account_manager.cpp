@@ -7,6 +7,10 @@
 
 #include "account_manager.h"
 
+std::string firstName{"defaulf"};
+std::string lastName{"default"};
+std::string login{"default"};
+std::string password{ "default" };
 
 static bool checkInput(std::string input, uint16_t minInput, uint16_t maxInput)
 {
@@ -27,12 +31,10 @@ void AccountManager::RegisterAccount()
 	tm *ltm = localtime(&now);
 	int lyear = 1900 + ltm->tm_year;
 
-	std::string firstName{"defaulf"};
-	std::string lastName{"default"};
+	
 	const uint16_t maxChars = 16u;
 	const uint16_t minChars = 3u;
-	std::string login{"default"};
-	std::string password{ "default" };
+
 
 	std::cout << "Your full name please: ";
 	std::cin >> firstName >> lastName;
@@ -64,12 +66,25 @@ void AccountManager::PrintAccounts()
 	}
 }
 
+/*bool AccountManager::CheckLogin()
+{
+	if (account.GetLogin(login) == true)
+	{
+		if (account.GetPass(password) == true)
+		{
+			std::cout << "Login successful!\n";
+			return true;
+		}
+	}
+}
+*/
 void AccountManager::LoginToAccount()
 {
 	for (Account account : accounts)
 	{
-		account.LoginToTheAccount();
-	}
+		
+
+	} 
 }
 
 void AccountManager::WriteToFile(std::string fName = "Szymon", std::string lName = "Koko", std::string login = "admin", std::string pass = "admin")
@@ -81,3 +96,51 @@ void AccountManager::WriteToFile(std::string fName = "Szymon", std::string lName
 	file.close();
 }
 
+void AccountManager::GetLogin()
+{
+	bool loginStatus = false;
+	std::string tmpFirstName{"default"};
+	std::string tmpLastName{"default"};
+	std::string tmpLogin{"default"};
+	std::string tmpPass{"default"};
+	std::cout << "Full name: ";
+	std::cin >> tmpFirstName >> tmpLastName;
+	ReadFromFile(tmpFirstName, tmpLastName);
+	do
+	{
+		std::cout << "Login: ";
+		std::cin >> tmpLogin;
+		std::cout << "Password: ";
+		std::cin >> tmpPass;
+
+		if (tmpLogin == login && tmpPass == password)
+		{
+			Account tmpAccount{ firstName, lastName, login, password };
+			accounts.push_back(tmpAccount);
+			std::cout << "Login successful!\n";
+			loginStatus = true;
+		}
+		else
+		{
+			std::cout << "Wrong login or password!\n";
+		}
+	} while (!loginStatus);
+	
+}
+
+void AccountManager::ReadFromFile(std::string fName = "Szymon", std::string lName = "Koko")
+{
+	
+	std::string fileName = fmt::format("{} {}.txt", fName, lName);
+	std::ifstream file (fileName);
+	if(file.is_open() == true)
+	{ 
+	file >> firstName >> lastName >> login >> password;
+	}
+	else
+	{
+		std::cout << "File doesn`t exist\n";
+	}
+	
+	file.close();
+}
