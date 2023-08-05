@@ -7,7 +7,7 @@
 
 #include "gui.h"
 
-void showStartGui()
+void showGui()
 {
 	fstream gui_file;
 	gui_file.open("gui_start.txt", ios::in);
@@ -19,8 +19,5 @@ void showStartGui()
 			cout << gui << endl;
 		}
 	}
-}
 
-void showAppGui()
-{
-	cout << "Name: ";
+}
