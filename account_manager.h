@@ -50,6 +50,9 @@ public:
 	void RegisterAccount();
 	void PrintAccounts();
 	void LoginToAccount();
+	void GetLogin();
+	void ReadFromFile(std::string, std::string);
+	//bool CheckLogin();
 	
 
 private:

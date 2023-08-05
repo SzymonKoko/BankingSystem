@@ -8,12 +8,14 @@
 #ifndef GUI_H_
 #define GUI_H_
 
+#include "account_manager.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
 using namespace std;
 
-void showGui();
+void showStartGui();
+void showAppGui();
 
 #endif // !GUI_H_
